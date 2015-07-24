@@ -32,15 +32,16 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">weatherApp</a>
+            <a class="navbar-brand" href="#/">Weather App</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
+              <li><a href="#/">Home</a></li>
+              <li><a ng-href="#/weather">Weather</a></li>
+              <li><a ng-href="#/manage">Manage Cities</a></li>
               <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -53,7 +54,6 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
 
@@ -88,6 +88,8 @@
         <script src="scripts/controllers/managecities.js"></script>
         <script src="scripts/controllers/weather.js"></script>
         <script src="scripts/services/weatherapi.js"></script>
+        <script src="scripts/services/citylist.js"></script>
+        <script src="scripts/services/weatherdata.js"></script>
         <!-- endbuild -->
 </body>
 </html>

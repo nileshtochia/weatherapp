@@ -27,6 +27,16 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/weather', {
+        templateUrl: 'views/weather.html',
+        controller: 'WeatherCtrl',
+        controllerAs: 'weather'
+      })
+      .when('/manage', {
+        templateUrl: 'views/managecities.html',
+        controller: 'ManagecitiesCtrl',
+        controllerAs: 'managecities'
+      })
       .otherwise({
         redirectTo: '/'
       });

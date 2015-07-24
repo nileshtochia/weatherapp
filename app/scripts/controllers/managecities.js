@@ -8,10 +8,11 @@
  * Controller of the weatherAppApp
  */
 angular.module('weatherAppApp')
-  .controller('ManagecitiesCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ManagecitiesCtrl', function ($scope, cityList) {
+    $scope.cityList = cityList.getCities();
+    $scope.newCity = '';
+    $scope.addCity = function(){
+        cityList.addCity($scope.newCity);
+        $scope.newCity = '';
+    };
   });

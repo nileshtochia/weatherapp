@@ -15,9 +15,5 @@ describe('Controller: WeatherCtrl', function () {
       $scope: scope
       // place here mocked dependencies
     });
-  }));
-
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(WeatherCtrl.awesomeThings.length).toBe(3);
-  });
+  }));  
 });
