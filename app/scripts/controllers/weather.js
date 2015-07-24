@@ -8,8 +8,7 @@
  * Controller of the weatherAppApp
  */
 angular.module('weatherAppApp')
-  .controller('WeatherCtrl', function ($scope, weatherApi) {
-    weatherApi.getCurrentWeather('london', function(weatherData){
-        $scope.weatherData = weatherData;
-    });
+  .controller('WeatherCtrl', function ($scope, weatherData) {
+      weatherData.refreshData();
+      $scope.weatherData = weatherData.weatherDataByCity;
   });
