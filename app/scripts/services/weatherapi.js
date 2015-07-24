@@ -30,7 +30,7 @@ angular.module('weatherAppApp')
   );
 
    this.getCurrentWeather = function (cityId, callback){
-       var cityWeatherData = CurrentWeatherResource.get({id: cityId}, function (){
+       var cityWeatherData = CurrentWeatherResource.get({id: cityId, units: 'metric'}, function (){
          callback(cityWeatherData);
        });
    };

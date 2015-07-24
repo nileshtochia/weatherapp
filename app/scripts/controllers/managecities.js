@@ -10,26 +10,29 @@
 angular.module('weatherAppApp')
   .controller('ManagecitiesCtrl', function ($scope, cityList, weatherApi) {
     $scope.cityList = cityList.getCities();
-    $scope.newCity = '';
+    $scope.newCity = null;
     $scope.addCity = function(){
-        // weatherApi.findCity($scope.newCity, function (data) {
-        //     console.log(data);
-        // });
-        $scope.findCity($scope.newCity);
-        cityList.addCity($scope.newCity);
-        $scope.newCity = '';
+        if ($scope.newCity !== null && $scope.newCity.id !== undefined) {
+            cityList.addCity($scope.newCity);
+            $scope.newCity = null;
+        }
     };
 
     $scope.findCity = function (city) {
         var foo = weatherApi.findCity(city, angular.noop);
         return foo.$promise.then(function (data) {
-            return data.list.map(function(item){
+            if (data.cod === "200") {
+            return data.list.filter(function (item) {
+                var isCity = item.name !== '';
+                return isCity;
+            }).map(function(item){
                return {
                    id: item.id,
                    name: item.name,
                    displayName: item.name + ', ' + item.sys.country
                };
              });
+         }
         });
     };
   });
