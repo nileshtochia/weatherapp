@@ -17,6 +17,14 @@ angular.module('weatherAppApp')
             weatherApi.getCurrentWeather(city.id, function(weatherData) {
                 _this.weatherDataByCity[city.id].current = weatherData;
             });
+
+            weatherApi.getHistoricalWeather(city.id, function(weatherData) {
+                _this.weatherDataByCity[city.id].historical = weatherData;
+            });
+
+            weatherApi.getForcastWeather(city.id, function(weatherData) {
+                _this.weatherDataByCity[city.id].forecast = weatherData;
+            });
         });
     };
   });

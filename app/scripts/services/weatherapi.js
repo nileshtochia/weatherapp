@@ -19,6 +19,26 @@ angular.module('weatherAppApp')
        }
    );
 
+   var HistoricalWeatherResource = $resource(
+      'http://api.openweathermap.org/data/2.5/history/city',
+      {},
+      {
+          get: {
+              method: 'GET'
+          }
+      }
+    );
+
+    var ForcastWeatherResource = $resource(
+     'http://api.openweathermap.org/data/2.5/forecast',
+     {},
+     {
+         get: {
+             method: 'GET'
+         }
+     }
+    );
+
    var FindCityResource = $resource(
       'http://api.openweathermap.org/data/2.5/find',
       {},
@@ -27,10 +47,22 @@ angular.module('weatherAppApp')
               method: 'GET'
           }
       }
-  );
+    );
 
    this.getCurrentWeather = function (cityId, callback){
        var cityWeatherData = CurrentWeatherResource.get({id: cityId, units: 'metric'}, function (){
+         callback(cityWeatherData);
+       });
+   };
+
+   this.getHistoricalWeather = function (cityId, callback){
+       var cityWeatherData = HistoricalWeatherResource.get({id: cityId, units: 'metric', type: 'hour'}, function (){
+         callback(cityWeatherData);
+       });
+   };
+
+   this.getForcastWeather = function (cityId, callback){
+       var cityWeatherData = ForcastWeatherResource.get({id: cityId, units: 'metric'}, function (){
          callback(cityWeatherData);
        });
    };
