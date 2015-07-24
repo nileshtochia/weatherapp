@@ -13,9 +13,9 @@ angular.module('weatherAppApp')
     _this.weatherDataByCity = {};
     _this.refreshData = function (){
         angular.forEach(cityList.getCities(), function(city) {
-            _this.weatherDataByCity[city] = { current: {} };
-            weatherApi.getCurrentWeather(city, function(weatherData) {
-                _this.weatherDataByCity[city].current = weatherData;
+            _this.weatherDataByCity[city.id] = { current: {} };
+            weatherApi.getCurrentWeather(city.id, function(weatherData) {
+                _this.weatherDataByCity[city.id].current = weatherData;
             });
         });
     };

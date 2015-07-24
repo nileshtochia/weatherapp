@@ -19,9 +19,27 @@ angular.module('weatherAppApp')
        }
    );
 
-   this.getCurrentWeather = function (city, callback){
-       var cityData = CurrentWeatherResource.get({q: city}, function (){
-         callback(cityData);
+   var FindCityResource = $resource(
+      'http://api.openweathermap.org/data/2.5/find',
+      {},
+      {
+          get: {
+              method: 'GET'
+          }
+      }
+  );
+
+   this.getCurrentWeather = function (cityId, callback){
+       var cityWeatherData = CurrentWeatherResource.get({id: cityId}, function (){
+         callback(cityWeatherData);
        });
+   };
+
+   this.findCity = function (city, callback){
+       var citySearchData = FindCityResource.get({q: city}, function (){
+         callback(citySearchData);
+       });
+
+       return citySearchData;
    };
   });
