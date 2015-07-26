@@ -1,7 +1,5 @@
-<ul>
-    <li ng-repeat="city in cityList">{{city.name}}</li>
-</ul>
-<form class="form-inline" ng-submit="addCity()">
+<div class="city-list" ng-repeat="city in cityList"><span class="city-name">{{city.name}}</span><div class="pull-right btn btn-danger" ng-click="removeCity(city);"><span class="glyphicon glyphicon-remove"></span></div></div>
+<form class="manage-cities form-inline" ng-submit="addCity()">
     <input type="text" ng-model="newCity" placeholder="Cities from api" typeahead="city as city.displayName for city in findCity($viewValue)" class="form-control">
     <button class="btn btn-success" ng-class="{'disabled': newCity.id === undefined}" type="submit">Add City</button>
 </form

@@ -18,6 +18,10 @@ angular.module('weatherAppApp')
         }
     };
 
+    $scope.removeCity = function(city){
+        cityList.removeCity(city);
+    };
+
     $scope.findCity = function (city) {
         var foo = weatherApi.findCity(city, angular.noop);
         return foo.$promise.then(function (data) {
