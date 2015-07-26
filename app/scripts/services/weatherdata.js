@@ -8,14 +8,15 @@
  * Service in the weatherAppApp.
  */
 angular.module('weatherAppApp')
-  .service('weatherData', function (cityList, weatherApi, $q) {
+  .service('weatherData', function (cityList, weatherApi, $q, weatherDataFactory) {
     var _this = this;
     _this.weatherDataByCity = {};
     _this.refreshData = function (allDoneCallback){
         angular.forEach(cityList.getCities(), function(city) {
-            _this.weatherDataByCity[city.id] = { current: {} };
+            _this.weatherDataByCity[city.id] = {};
+            _this.weatherDataByCity[city.id].current = weatherDataFactory.create();
             var currentWeatherPromise = weatherApi.getCurrentWeather(city.id, function(weatherData) {
-                _this.weatherDataByCity[city.id].current = weatherData;
+                weatherDataFactory.mapApiDataToViewModel(weatherData, _this.weatherDataByCity[city.id].current);
             });
 
             var historicalWeatherPromise = weatherApi.getHistoricalWeather(city.id, function(weatherData) {
