@@ -91,7 +91,7 @@ body {
 }
 
 .current-weather{
-    .date{
+    .current-date{
         font-size: 1.5em;
     }
     .wi{
@@ -111,5 +111,50 @@ body {
     .temp-block, .current-temp
     {
         display: inline-block;
+    }
+}
+
+.forecast-weather {
+    .degrees{
+        font-size: 0.7em;
+    }
+    .weather-icon{
+        font-size: 1.3em;
+        position: absolute;
+        top: -25px;
+        left: 10px;
+    }
+    .date, .hours, .mins{
+        font-size: 0.85em;
+    }
+    .date {
+        position: absolute;
+        bottom: -20px;
+    }
+    .temp {
+        color: white;
+    }
+    .temp-bar{
+        text-align: center;
+        margin: 25px 0;
+        background-color: red;
+        width: 35px;
+        display: inline-block;
+        margin-right: 5px;
+        position:relative;
+        vertical-align:bottom;
+    }
+}
+
+.forecast-weather {
+    .popover{
+        width: 275px;
+    }
+}
+
+.temp-bar{
+    transition: all 0.2s;
+    &:hover{
+        background-color: lighten(red, 10);
     }
 }

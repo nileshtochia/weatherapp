@@ -10,5 +10,6 @@
 angular.module('weatherAppApp')
   .constant('TEMPLATEPATHS', {
       templatesFolder: '/views/templates/',
-      currentWeatherTemplate: 'current-weather.html'
+      currentWeatherTemplate: 'current-weather.html',
+      weatherListTemplate: 'weather-list.html'
   });

@@ -1,4 +1,5 @@
-<div class="date">{{data.dateTime | date : 'fullDate'}}</div>
+<div class="current-date">{{data.dateTime | date : 'fullDate'}}</div>
+<div class="time"><span class="hour">{{data.dateTime | date : 'HH'}}</span>:<span class="mins">{{data.dateTime | date : 'mm'}}</span></div>
 <weather-icon icon-code="data.weather.icon" icon-description="data.weather.description"></weather-icon>
 <div class="temp-block">
     <div class="current-temp">{{data.main.temp}}&deg;C</div>
@@ -7,5 +8,11 @@
         <div class="temp-max">Max {{data.main.temp_max}}&deg;C</div>
     </div>
 </div>
+<div>Clouds: {{data.clouds.all}}%</div>
+<div ng-if="data.rain">
+    <div ng-if="data.rain['1h'] !== undefined">Rain 1h: {{data.rain['1h']}}m&#179;</div>
+    <div ng-if="data.rain['3h'] !== undefined">Rain 3h: {{data.rain['3h']}}m&#179;</div>
+</div>
+<div>Pressure: {{data.main.pressure}}hPa</div>
 <div>Humidity: {{data.main.humidity}}%</div>
-<div>Wind: {{data.wind.speed}} {{data.wind.deg}} deg</div>
+<div>Wind: {{data.wind.speed}}m/s | {{data.wind.deg}} deg</div>

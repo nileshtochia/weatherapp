@@ -9,7 +9,7 @@
  */
 angular.module('weatherAppApp')
   .service('cityList', function () {
-    var cityList = [];
+    var cityList = [{id: 2643743, name:'London'}];
     this.addCity = function (city){
         cityList.push(city);
     };

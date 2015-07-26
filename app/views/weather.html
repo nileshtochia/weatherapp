@@ -8,8 +8,8 @@
      <h2>Now</h2>
      <current-weather class="current-weather" data="weatherData[city.id].current"></current-weather>
      <h2>Forecast</h2>
-     <pre>{{weatherData[city.id].forecast}}</pre>
+     <weather-list class="forecast-weather" data="weatherData[city.id].forecast"></weather-list>
      <h2>Historical</h2>
-     <pre>{{weatherData[city.id].historical}}</pre>
+     <weather-list class="forecast-weather" data="weatherData[city.id].historical"></weather-list>
    </tab>
 </tabset>
