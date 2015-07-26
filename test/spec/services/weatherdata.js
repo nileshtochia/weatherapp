@@ -45,15 +45,15 @@ describe('Service: weatherData', function () {
     expect(weatherApi.getForcastWeather).toHaveBeenCalledWith(1, jasmine.any(Function));
     expect(weatherApi.getForcastWeather).toHaveBeenCalledWith(2, jasmine.any(Function));
   });
-  
+
   it('should call callback when all promises are resolved', function () {
     var callback = jasmine.createSpy();
-    
+
     weatherData.refreshData(callback);
-    
+
     expect(promiseThenFn).toHaveBeenCalled();
     promiseThenFn.calls.mostRecent().args[0]();
     expect(callback).toHaveBeenCalled();
-  });  
+  });
 
 });

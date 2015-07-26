@@ -24,7 +24,7 @@ angular.module('weatherAppApp')
             var weatherViewModel = weatherDataFactory.create();
             weatherViewModel = weatherDataFactory.mapApiDataToViewModel(weatherApiItem, weatherViewModel);
             newViewModel.list.push(weatherViewModel);
-        })
+        });
         return newViewModel;
     };
 

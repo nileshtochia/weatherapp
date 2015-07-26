@@ -13,7 +13,7 @@ angular.module('weatherAppApp')
           weatherData.main.temp =  weatherData.main.temp - 273;
           weatherData.main.temp_min =  weatherData.main.temp_min - 273;
           weatherData.main.temp_max =  weatherData.main.temp_max - 273;
-      }
+      };
     var _this = this;
     _this.weatherDataByCity = {};
     _this.refreshData = function (allDoneCallback){

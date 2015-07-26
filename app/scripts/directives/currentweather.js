@@ -7,14 +7,14 @@
  * # currentWeather
  */
 angular.module('weatherAppApp')
-  .directive('currentWeather', function (TEMPLATEPATHS, $timeout) {
+  .directive('currentWeather', function (TEMPLATEPATHS) {
     return {
       templateUrl: TEMPLATEPATHS.templatesFolder + TEMPLATEPATHS.currentWeatherTemplate,
       restrict: 'E',
       scope: {
           data: '='
       },
-      link: function postLink(scope) {
+      link: function postLink() {
       }
     };
   });

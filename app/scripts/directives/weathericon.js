@@ -15,7 +15,7 @@ angular.module('weatherAppApp')
       },
       template: '<i class="wi {{iconClass}}" tooltip="{{iconDescription}}" tooltip-placement="bottom"></i>',
       restrict: 'AE',
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope) {
           scope.$watch('iconCode', function (){
               scope.iconClass = weatherCodeToWeatherIconMap[scope.iconCode];
           });

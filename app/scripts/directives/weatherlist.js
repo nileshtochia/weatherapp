@@ -14,7 +14,7 @@ angular.module('weatherAppApp')
       scope: {
           data: '='
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope) {
           scope.popoverTemplateUrl = 'weather-popover.html';
       }
     };

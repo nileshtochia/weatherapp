@@ -2,4 +2,4 @@
 <form class="manage-cities form-inline" ng-submit="addCity()">
     <input type="text" ng-model="newCity" placeholder="Cities from api" typeahead="city as city.displayName for city in findCity($viewValue)" class="form-control">
     <button class="btn btn-success" ng-class="{'disabled': newCity.id === undefined}" type="submit">Add City</button>
-</form
+</form>
