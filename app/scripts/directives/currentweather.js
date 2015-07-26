@@ -15,7 +15,6 @@ angular.module('weatherAppApp')
           data: '='
       },
       link: function postLink(scope) {
-        //   scope.iconCode = scope.data.weather[0].icon;
       }
     };
   });

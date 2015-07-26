@@ -10,11 +10,15 @@ angular.module('weatherAppApp')
   .directive('weatherIcon', function (weatherCodeToWeatherIconMap) {
     return {
       scope: {
-          iconCode: '='
+          iconCode: '=',
+          iconDescription: '='
       },
-      template: '<i class="wi {{iconClass}}"></i>',
+      template: '<i class="wi {{iconClass}}" tooltip="{{iconDescription}}"></i>',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
+          scope.$watch('iconCode', function (){
+              scope.iconClass = weatherCodeToWeatherIconMap[scope.iconCode];
+          });
       }
     };
   });
