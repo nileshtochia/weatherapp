@@ -89,3 +89,27 @@ body {
     border-bottom: 0;
   }
 }
+
+.current-weather{
+    .date{
+        font-size: 1.5em;
+    }
+    .wi{
+        display: inline-block;
+        font-size: 4.5em;
+        padding: 15px;
+    }
+
+    .current-temp {
+        font-size: 2em;
+    }
+
+    .sub-temp {
+        padding-left:3px;
+    }
+
+    .temp-block, .current-temp
+    {
+        display: inline-block;
+    }
+}

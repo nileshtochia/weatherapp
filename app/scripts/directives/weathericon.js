@@ -13,7 +13,7 @@ angular.module('weatherAppApp')
           iconCode: '=',
           iconDescription: '='
       },
-      template: '<i class="wi {{iconClass}}" tooltip="{{iconDescription}}"></i>',
+      template: '<i class="wi {{iconClass}}" tooltip="{{iconDescription}}" tooltip-placement="bottom"></i>',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
           scope.$watch('iconCode', function (){

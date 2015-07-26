@@ -1,5 +1,11 @@
-<p>{{data.dateTime | date : 'fullDate'}}</p>
+<div class="date">{{data.dateTime | date : 'fullDate'}}</div>
 <weather-icon icon-code="data.weather.icon" icon-description="data.weather.description"></weather-icon>
-<p>Humidity {{data.main.humidity}}%</p>
-<p>Wind: {{data.wind.speed}} {{data.wind.deg}} deg</p>
-<p>Temp: {{data.main.temp}}</p>
+<div class="temp-block">
+    <div class="current-temp">{{data.main.temp}}&deg;C</div>
+    <div class="sub-temp">
+        <div class="temp-min">Min {{data.main.temp_min}}&deg;C</div>
+        <div class="temp-max">Max {{data.main.temp_max}}&deg;C</div>
+    </div>
+</div>
+<div>Humidity: {{data.main.humidity}}%</div>
+<div>Wind: {{data.wind.speed}} {{data.wind.deg}} deg</div>
