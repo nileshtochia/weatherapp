@@ -16,7 +16,7 @@ angular.module('weatherAppApp')
             _this.weatherDataByCity[city.id] = {};
             _this.weatherDataByCity[city.id].current = weatherDataFactory.create();
             var currentWeatherPromise = weatherApi.getCurrentWeather(city.id, function(weatherData) {
-                weatherDataFactory.mapApiDataToViewModel(weatherData, _this.weatherDataByCity[city.id].current);
+                _this.weatherDataByCity[city.id].current = weatherDataFactory.mapApiDataToViewModel(weatherData, _this.weatherDataByCity[city.id].current);
             });
 
             var historicalWeatherPromise = weatherApi.getHistoricalWeather(city.id, function(weatherData) {

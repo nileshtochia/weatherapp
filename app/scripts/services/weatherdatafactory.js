@@ -41,23 +41,26 @@ angular.module('weatherAppApp')
     };
 
     var mapApiDataToViewModel = function (apiData, viewModel) {
-        viewModel.id = apiData.id;
-        viewModel.country = apiData.sys.country;
-        viewModel.name = apiData.name;
-        viewModel.weather.id = apiData.weather[0].id;
-        viewModel.weather.main = apiData.weather[0].main;
-        viewModel.weather.description = apiData.weather[0].description;
-        viewModel.weather.icon = apiData.weather[0].icon;
-        viewModel.main.temp = apiData.main.temp;
-        viewModel.main.pressure = apiData.main.pressure;
-        viewModel.main.humidity = apiData.main.humidity;
-        viewModel.main.temp_min = apiData.main.temp_min;
-        viewModel.main.temp_max = apiData.main.temp_max;
-        viewModel.clouds.all = apiData.clouds.all;
-        viewModel.wind.speed = apiData.wind.speed;
-        viewModel.wind.deg = apiData.wind.deg;
-        viewModel.rain = apiData.rain;
-        viewModel.dateTime = new Date(apiData.dt * 1000);
+        var newViewModel = angular.copy(viewModel);
+        newViewModel.id = apiData.id;
+        newViewModel.country = apiData.sys.country;
+        newViewModel.name = apiData.name;
+        newViewModel.weather.id = apiData.weather[0].id;
+        newViewModel.weather.main = apiData.weather[0].main;
+        newViewModel.weather.description = apiData.weather[0].description;
+        newViewModel.weather.icon = apiData.weather[0].icon;
+        newViewModel.main.temp = apiData.main.temp;
+        newViewModel.main.pressure = apiData.main.pressure;
+        newViewModel.main.humidity = apiData.main.humidity;
+        newViewModel.main.temp_min = apiData.main.temp_min;
+        newViewModel.main.temp_max = apiData.main.temp_max;
+        newViewModel.clouds.all = apiData.clouds.all;
+        newViewModel.wind.speed = apiData.wind.speed;
+        newViewModel.wind.deg = apiData.wind.deg;
+        newViewModel.rain = apiData.rain;
+        newViewModel.dateTime = new Date(apiData.dt * 1000);
+
+        return newViewModel;
     }
 
     // Public API here
