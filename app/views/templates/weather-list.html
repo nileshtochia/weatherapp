@@ -6,7 +6,9 @@
 
 <div class="temp-bar" ng-repeat="item in data.list">
     <div class="weather-icon" weather-icon icon-code="item.weather.icon" icon-description="item.weather.description"></div>
-    <div class="date">{{item.dateTime | date : 'dd/MM'}}</div>
-    <div class="time"><span class="hour">{{item.dateTime | date : 'HH'}}</span><span class="mins">{{item.dateTime | date : 'mm'}}</span></div>
-    <div style="height: {{item.main.temp * 5}}px;" popover-template="popoverTemplateUrl" popover-trigger="mouseenter" popover-placement="top"><span class="temp">{{item.main.temp}}<span class="degrees">&deg;C</span></span></div>
+    <div popover-template="popoverTemplateUrl" popover-trigger="mouseenter" popover-placement="top">
+        <div class="date">{{item.dateTime | date : 'dd/MM'}}</div>
+        <div class="time"><span class="hour">{{item.dateTime | date : 'HH'}}</span><span class="mins">{{item.dateTime | date : 'mm'}}</span></div>
+        <div style="height: {{item.main.temp * 5}}px;" ><span class="temp">{{item.main.temp}}<span class="degrees">&deg;C</span></span></div>
+    </div>
 </div>

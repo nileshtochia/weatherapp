@@ -18,6 +18,14 @@ describe('Controller: ManagecitiesCtrl', function () {
   }));
 
   it('should attach a list of cityList to the scope', function () {
-    expect(scope.cityList.length).toBe(0);
+    expect(scope.cityList.length).toBe(1);
+  });
+  
+  it('should set the new city to null after add', function () {
+    scope.newCity = { id: 1 };
+    
+    scope.addCity();
+    
+    expect(scope.newCity).toBe(null);
   });
 });
