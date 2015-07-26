@@ -8,6 +8,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.css" />
+    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -39,8 +41,8 @@
 
             <ul class="nav navbar-nav">
               <li><a href="#/">Home</a></li>
-              <li><a ng-href="#/weather">Weather</a></li>
               <li><a ng-href="#/manage">Manage Cities</a></li>
+              <li><a ng-href="#/weather">Weather</a></li>
               <li><a ng-href="#/about">About</a></li>
             </ul>
           </div>
@@ -91,6 +93,10 @@
         <script src="scripts/services/weatherapi.js"></script>
         <script src="scripts/services/citylist.js"></script>
         <script src="scripts/services/weatherdata.js"></script>
+        <script src="scripts/directives/currentweather.js"></script>
+        <script src="scripts/services/templatepaths.js"></script>
+        <script src="scripts/services/weathercodetoweathericonmap.js"></script>
+        <script src="scripts/directives/weathericon.js"></script>
         <!-- endbuild -->
 </body>
 </html>

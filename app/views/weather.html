@@ -1,5 +1,16 @@
-<p>
+<!-- <p>
     <pre>
         {{weatherData}}
     </pre>
-</p>
+</p> -->
+<tabset>
+   <tab ng-repeat="city in cityList" heading="{{city.name}}" active="city.active">
+     <h2>Current</h2>
+     <current-weather data="weatherData[city.id].current"></current-weather>
+     <!-- <pre>{{weatherData[city.id].current}}</pre> -->
+     <h2>Forecast</h2>
+     <pre>{{weatherData[city.id].forecast}}</pre>
+     <h2>Historical</h2>
+     <pre>{{weatherData[city.id].historical}}</pre>
+   </tab>
+</tabset>

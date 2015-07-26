@@ -53,18 +53,24 @@ angular.module('weatherAppApp')
        var cityWeatherData = CurrentWeatherResource.get({id: cityId, units: 'metric'}, function (){
          callback(cityWeatherData);
        });
+
+       return cityWeatherData;
    };
 
    this.getHistoricalWeather = function (cityId, callback){
        var cityWeatherData = HistoricalWeatherResource.get({id: cityId, units: 'metric', type: 'hour'}, function (){
          callback(cityWeatherData);
        });
+
+       return cityWeatherData;
    };
 
    this.getForcastWeather = function (cityId, callback){
        var cityWeatherData = ForcastWeatherResource.get({id: cityId, units: 'metric'}, function (){
          callback(cityWeatherData);
        });
+
+       return cityWeatherData;
    };
 
    this.findCity = function (city, callback){
