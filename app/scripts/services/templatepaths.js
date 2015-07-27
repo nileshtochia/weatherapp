@@ -9,7 +9,7 @@
  */
 angular.module('weatherAppApp')
   .constant('TEMPLATEPATHS', {
-      templatesFolder: '/views/templates/',
+      templatesFolder: 'views/templates/',
       currentWeatherTemplate: 'current-weather.html',
       weatherListTemplate: 'weather-list.html'
   });
