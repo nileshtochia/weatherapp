@@ -23,12 +23,15 @@ angular.module('weatherAppApp')
     };
 
     $scope.findCity = function (city) {
-        var foo = weatherApi.findCity(city, angular.noop);
-        return foo.$promise.then(function (data) {
+        var findCity = weatherApi.findCity(city, angular.noop);
+        return findCity.$promise.then(function (data) {
             if (data.cod === "200") {
             return data.list.filter(function (item) {
                 var isCity = item.name !== '';
-                return isCity;
+                var hasBeenAdded = cityList.getCities().filter(function (addedCity){
+                    return addedCity.id === item.id;
+                }).length === 1;
+                return isCity && !hasBeenAdded;
             }).map(function(item){
                return {
                    id: item.id,
